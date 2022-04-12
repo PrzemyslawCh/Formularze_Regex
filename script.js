@@ -19,7 +19,7 @@ const ulReg = new RegExp(/^(ul.[A-ZŚŁŻŹĆŃ][a-zęóąśłżźćń]{1,25})|(
 const TextReg = new RegExp(/^[A-ZŚŁŻŹĆŃ][a-zęóąśłżźćń]{1,30}$/);
 const liczbaReg = new RegExp(/^[1-9][0-9]{0,5}$/);
 const dataReg = new RegExp(/^^([0-2][0-9]|(3)[0-1])(\-)(((0)[0-9])|((1)[0-2]))(\-)\d{4}$/);
-const numerReg = new RegExp(/(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/);
+const numerReg = new RegExp(/^[0-9]{9}$/);
 
 imie.addEventListener('input', function(e) {
     const curruntValue = e.target.value;
