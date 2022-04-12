@@ -15,10 +15,10 @@ const data = document.getElementById('data');
 //tel
 const telefon = document.getElementById('telefon');
 
-
+const ulReg = new RegExp(/^(ul.[A-ZŚŁŻŹĆŃ][a-zęóąśłżźćń]{1,25})|([A-ZŚŁŻŹĆŃ][a-zęóąśłżźćń]{1,25})|([a-zęóąśłżźćń]{1,25})$/);
 const TextReg = new RegExp(/^[A-ZŚŁŻŹĆŃ][a-zęóąśłżźćń]{1,30}$/);
 const liczbaReg = new RegExp(/^[1-9][0-9]{0,5}$/);
-const dataReg = new RegExp(/^[1-3][0-9]-[0-1][0-9]-[1-2][0-9]{3}$/);
+const dataReg = new RegExp(/^^([0-2][0-9]|(3)[0-1])(\-)(((0)[0-9])|((1)[0-2]))(\-)\d{4}$/);
 const numerReg = new RegExp(/(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/);
 
 imie.addEventListener('input', function(e) {
@@ -59,7 +59,7 @@ miasto.addEventListener('input', function(e) {
 })
 ulica.addEventListener('input', function(e) {
     const curruntValue = e.target.value;
-    const valid = TextReg.test(curruntValue);
+    const valid = ulReg.test(curruntValue);
 
     if(valid){
         ulica.style.border = "3px solid greenyellow"
